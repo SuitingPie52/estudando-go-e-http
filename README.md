@@ -1,1 +1,3 @@
-Ideias para implementar: criar uma função de construção que dependendo da struct vai inicializar com git sendo true ou false, e a adicioná-la a interface 
+Ideias para implementar: adicionar função que mostra todos que já foram impressos
+criar menu 
+usar git bool no print

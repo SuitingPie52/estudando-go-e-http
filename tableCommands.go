@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 var TableCommands = map[string]Explainable{
 
@@ -13,31 +17,43 @@ func isCommandValid(c Explainable) bool {
 
 }
 
+func input() string {
+
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	s := scanner.Text()
+
+	return s
+
+}
+
 func Run() {
 
+	scanner := bufio.NewScanner(os.Stdin)
 	var searched []Explainable
 	var userInput, exit string
 
 	for exit != "s" {
 
 		fmt.Printf("Você quer aprender sobre qual comando? ")
-		fmt.Scanln(&userInput)
+		userInput = input()
 
-		c := TableCommands[userInput].ConstructObject()
+		if !isCommandValid(TableCommands[userInput]) {
 
-		if !isCommandValid(c) {
-
-			fmt.Printf("Comando não existe, digite novamente.")
+			fmt.Printf("Comando não existe, digite novamente.\n")
 			continue
 
 		}
+
+		c := TableCommands[userInput].ConstructObject()
 
 		fmt.Printf(c.explanation)
 
 		searched = append(searched, c)
 
 		fmt.Printf("Você deseja finalizar o programa e imprimir todas as funções que você pesquisou? (s/n) ")
-		fmt.Scanln(exit)
+		scanner.Scan()
+		exit = scanner.Text()
 
 	}
 
