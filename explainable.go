@@ -1,8 +1,5 @@
 package main
 
 type Explainable interface {
-	
-	PrintInfo ()
-
+	ConstructObject() GitInit
 }
-

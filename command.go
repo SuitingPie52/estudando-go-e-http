@@ -1,8 +1,6 @@
-package main 
+package main
 
 type Command struct {
-
-	git bool 
-
+	git         bool
+	explanation string
 }
-

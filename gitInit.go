@@ -1,15 +1,13 @@
-package main 
-
-import "fmt"
+package main
 
 type GitInit struct {
-
 	Command
-
 }
 
-func (g GitInit) PrintInfo () {
+func (g GitInit) ConstructObject() GitInit {
 
-	fmt.Printf("Transforma a pasta atual em uma pasta git.")
+	g.explanation = "Transforma a pasta atual em uma pasta git.\n"
+	g.git = true
+	return g
 
 }
