@@ -1,1 +1,1 @@
-Ideias para implementar: adicionar função que mostra todos que já foram impressos, criar menu, usar git bool no print, criar mapa[bool]Explainable[] que separa entre aquivos git e arquivos que não são git
+Ideas up to date!
