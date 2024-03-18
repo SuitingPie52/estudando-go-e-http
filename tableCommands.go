@@ -1,6 +1,8 @@
 package main
 
 var TableCommands = map[string]Explainable{
-
-	"git init": GitInit{},
+	"mkdir":      MakeDirectory{},
+	"cd":         ChangeDirectory{},
+	"git init":   GitInit{},
+	"git status": GitStatus{},
 }

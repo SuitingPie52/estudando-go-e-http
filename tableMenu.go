@@ -9,7 +9,42 @@ import (
 var TableMenu = map[string]func(){
 
 	"1":  explainCommand,
+	"2":  ListAllCommands,
 	"-1": func() { os.Exit(0) },
+}
+
+func isMenuOptionValid(s string) bool {
+
+	return TableMenu[s] != nil
+
+}
+
+func ListAllCommands() {
+
+	ListCommands := map[bool][]string{}
+
+	for name, c := range TableCommands {
+
+		ListCommands[c.ConstructObject().git] = append(ListCommands[c.ConstructObject().git], name)
+
+	}
+
+	fmt.Printf("Not Git:\n\n")
+
+	for _, c := range ListCommands[false] {
+
+		fmt.Println(c)
+
+	}
+
+	fmt.Printf("\nGit:\n\n")
+
+	for _, c := range ListCommands[true] {
+
+		fmt.Println(c)
+
+	}
+
 }
 
 func isCommandValid(c Explainable) bool {
@@ -58,6 +93,7 @@ func printMenu() {
 		"|      DICIONÁRIO DE TERMINAL     |\n" +
 		"-----------------------------------\n" +
 		"| 1 - Aprender sobre um comando   |\n" +
+		"| 2 - Listar todos os comandos    |\n" +
 		"| -1 - Sair                       |\n" +
 		"-----------------------------------\n")
 
@@ -72,6 +108,14 @@ func Run() {
 		printMenu()
 
 		option = input()
+
+		if !isMenuOptionValid(option) {
+
+			fmt.Println("Essa opção não existe. Escolha outra.")
+			continue
+
+		}
+
 		TableMenu[option]()
 
 	}
