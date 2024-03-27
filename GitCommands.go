@@ -14,12 +14,6 @@ func (g GitInit) ConstructObject() Command {
 
 }
 
-func (g GitInit) PrintExplanationInServer(res http.ResponseWriter) {
-
-	res.Write([]byte(g.ConstructObject().explanation))
-
-}
-
 type GitStatus struct {
 	Command
 }

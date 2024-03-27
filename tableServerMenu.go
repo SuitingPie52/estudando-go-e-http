@@ -60,4 +60,6 @@ func ListAllCommandsInServer(res http.ResponseWriter, req *http.Request) {
 
 	}
 
+	return
+
 }
