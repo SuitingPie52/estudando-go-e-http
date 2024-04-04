@@ -1,5 +1,7 @@
 package main
 
+/*
+
 import (
 	"net/http"
 )
@@ -63,3 +65,5 @@ func ListAllCommandsInServer(res http.ResponseWriter, req *http.Request) {
 	return
 
 }
+
+*/

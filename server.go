@@ -11,6 +11,13 @@ type MainHandler struct {
 
 func (h MainHandler) ServeHTTP(res http.ResponseWriter, req *http.Request) {
 
+	// 1 - criar uma função para adicionar um comando a lista de comandos por meio de POST
+	// 2 - criar uma função GET que encontre o filme adicionado pelo seu nome
+	
+	CommandController[req.Method][req.URL.Path](res, req)
+	
+	/*
+	
 	res.Write([]byte("-----------------------------------\n" +
 		"|      DICIONÁRIO DE TERMINAL     |\n" +
 		"-----------------------------------\n" +
@@ -34,13 +41,15 @@ func (h MainHandler) ServeHTTP(res http.ResponseWriter, req *http.Request) {
 	}
 
 	TableServerMenu[option](res, req)
+	
+	*/
 
 }
 
 func CreateServer() {
 
 	s := &http.Server{
-		Addr:         "172.22.88.142:8080",
+		Addr:         "192.168.0.9:8080",
 		Handler:      MainHandler{},
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,

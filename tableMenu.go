@@ -1,10 +1,14 @@
 package main
 
+/*
+
 import (
 	"bufio"
 	"fmt"
 	"os"
 )
+
+
 
 var TableMenu = map[string]func(){
 
@@ -121,3 +125,5 @@ func Run() {
 	}
 
 }
+
+*/

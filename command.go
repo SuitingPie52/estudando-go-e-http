@@ -1,7 +1,9 @@
 package main
 
 type Command struct {
-	git         bool
-	explanation string
+	
+	Input	    string `json: "Input"`
+	Git         bool `json: "Git"`
+	Explanation string `json: "Explanation"`
 
 }
