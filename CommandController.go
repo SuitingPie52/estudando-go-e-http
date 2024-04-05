@@ -13,13 +13,13 @@ var CommandController = map[string]map[string]func(http.ResponseWriter, *http.Re
 
 var PostFunctions = map[string]func(http.ResponseWriter, *http.Request)error {
 
-	"/movie": Create,
+	"/command": Create,
 
 }
 
 var GetFunctions = map[string]func(http.ResponseWriter, *http.Request)error {
 
-	"/movie": SearchByInput,
+	"/command": SearchByInput,
 	
 }
 
