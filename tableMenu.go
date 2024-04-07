@@ -23,7 +23,7 @@ func isMenuOptionValid(s string) bool {
 
 }
 
-func ListAllCommands() {
+func ListAllCommandsInConsole() {
 
 	ListCommands := map[bool][]string{}
 

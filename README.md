@@ -1,4 +1,5 @@
-1 - Atualizar código comentado (parte desatualizada)
-2 - tentar fazer menu usando json e função de listar todos as funções existentes 
-3 - tratamento de erro
-4 - adicionar responses (para erro e sucesso)
+Atualizar código comentado (parte desatualizada)
+- codigo não funciona pelo console
+- encontrar forma de não usar []byte
+- erro ao usar post em um json que não se encaixa no formato Command não está sendo tratado
+
