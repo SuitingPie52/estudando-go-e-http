@@ -6,3 +6,10 @@ Atualizar código comentado (parte desatualizada)
 
 Possível solução 3: ai ínves de usar NewDecoder().Decode() usar Unmarshal
 https://pkg.go.dev/encoding/json#Unmarshal
+
+
+nota sobre git:
+
+lembrar de commitar antes de git push --set-upstream (link).git (branch)
+git config --global user.name "(name)"
+git config --global user.email (email)
