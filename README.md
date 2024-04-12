@@ -13,3 +13,13 @@ nota sobre git:
 lembrar de commitar antes de git push --set-upstream (link).git (branch)
 git config --global user.name "(name)"
 git config --global user.email (email)
+
+como declarar struct anônima (?)
+
+dog := struct {
+    name   string
+    isGood bool
+}{
+    "Rex",
+    true,
+}
