@@ -4,6 +4,7 @@ import(
 	"net/http"
 	"encoding/json"
 	"errors"
+	"strconv"
 )
 
 var CommandController = map[string]map[string]func(http.ResponseWriter, *http.Request)error {
@@ -74,30 +75,17 @@ func SearchByInput (res http.ResponseWriter, req *http.Request) error {
 }
 
 func ListAllCommands(res http.ResponseWriter, req *http.Request)error {
-
-	type CommandGroup struct {
-		
-		Commands []Command `json: "Commands"`	
 	
-	}
-	
-	ListCommands := map[bool][]Command{}
+	ListCommands := map[string][]Command{}
 
 	for _, c := range TableCommands {
 
-		ListCommands[c.Git] = append(ListCommands[c.Git], c)
+		ListCommands[strconv.FormatBool(c.Git)] = append(ListCommands[strconv.FormatBool(c.Git)], c)
 
 	}
-
-	res.Write([]byte("Not git:\n\n")) // n sei como evitar usar []byte
-
-	ng, _ := json.Marshal(CommandGroup{ListCommands[false]})
-	res.Write(ng)
-
-	res.Write([]byte("\n\nGit:\n\n"))
-	
-	g, _ := json.Marshal(CommandGroup{ListCommands[true]})	
-	res.Write(g)
+		
+	l, _ := json.Marshal(ListCommands)	
+	res.Write(l)
 	
 	return nil
 

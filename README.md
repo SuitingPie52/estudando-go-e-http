@@ -3,12 +3,8 @@ Atualizar código comentado (parte desatualizada)
 2 - encontrar forma de não usar []byte
 3 - erro ao usar post em um json que não se encaixa no formato Command, não está sendo tratado.
 
-Possível parte da solução 2:
-json.Marshal() pode ser usado em mapa, nao só structs. Isso pode ser usado na função que lista todas as funções.
-
 Possível solução 3: ai ínves de usar NewDecoder().Decode() usar Unmarshal
 https://pkg.go.dev/encoding/json#Unmarshal
-
 
 nota sobre git:
 
